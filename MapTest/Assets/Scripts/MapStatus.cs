@@ -99,4 +99,21 @@ public class MapStatus : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public ArrayList getAdjacentTiles(int tileID) {
+		int rowSize = gameObject.GetComponent<MapGeneration>().rowSize;
+
+		ArrayList inRangeTileList = new ArrayList ();
+		//inRangeTileList.Add (currentTileIndex);
+
+		//int sightRange = Mathf.RoundToInt( baseSightRange * visibilityModifier);
+
+		inRangeTileList.Add (tileID + 1);
+		inRangeTileList.Add (tileID - 1);
+		inRangeTileList.Add (tileID + rowSize);
+		inRangeTileList.Add (tileID - rowSize);
+
+
+		return inRangeTileList;
+	}
 }

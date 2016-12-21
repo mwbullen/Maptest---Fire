@@ -19,6 +19,7 @@ public class SaveLoad : MonoBehaviour {
 	}
 
 	public void Save() {
+		/*
 		Tribe = GameObject.FindGameObjectWithTag ("Tribe");
 
 		BinaryFormatter bf = new BinaryFormatter ();
@@ -30,9 +31,10 @@ public class SaveLoad : MonoBehaviour {
 			
 		fs.Flush ();
 		fs.Close ();
-
+		*/
 	}
 
+	/*
 	public TribeInfo LoadSavedTribeInfo() {
 		if (File.Exists (Application.persistentDataPath + "/" + SaveTribeInfoFileName)) {
 			BinaryFormatter bf = new BinaryFormatter ();
@@ -47,6 +49,7 @@ public class SaveLoad : MonoBehaviour {
 
 		return null;
 	}
+	*/
 
 	public void SaveMapInfo() {
 		BinaryFormatter bf = new BinaryFormatter ();

@@ -5,62 +5,66 @@ public class TileInfo : MonoBehaviour {
 
 	public int TileID;
 
-	public bool Walkable;
+	//public bool Walkable;
 
-	public float foodChance = 0f;
-	public float randomAttackChance =0f;
-	//public bool hasFood = false;
-	bool hasFoodBool;
+	//public float visibilityModifier = 1f;
 
-	public float visibilityModifier = 1f;
-	public float foodConsumptionModifier = 1f;
-	GameObject foodObject;
+	public bool flammable = false;
 
-	public bool hasFood{
-		get {return hasFoodBool; }
-		set {
-			hasFoodBool = value;
-			if (value) {
-				foodObject = createFoodObject ();
+	public bool onFire = false;
 
-			} else {//if food consumed, destroy food object
-				if (foodObject) {
-					GameObject.Destroy (foodObject);
-				}
-			}
-		}
-	}
+	public float fuel = 10f;
+	public float burnRate = 0f;
+	public float fireResistance = 5f;
 
+	public GameObject fireParticleObject;
+	public GameObject fireParticlePrefab;
+
+	GameObject gameControl;
 	// Use this for initialization
 	void Start () {
-
-
-	}
-
-	public void initFoodState() {
-		float foodTest = Random.Range (0, 100);
-
-		if (foodTest < foodChance) {
-			//add food
-			hasFood = true;
-
-		}
-	}
-
-	GameObject createFoodObject() {
-		GameObject gameControl = GameObject.FindGameObjectWithTag ("GameControl");
-
-		GameObject foodPreFab = gameControl.GetComponent<MapGeneration> ().foodPrefab;
-
-		GameObject newFoodObject = GameObject.Instantiate (foodPreFab);
-		newFoodObject.transform.parent = gameObject.transform;
-		newFoodObject.transform.localPosition = new Vector3 (0, 0, 0);
-	
-		return newFoodObject;
+		gameControl = GameObject.FindGameObjectWithTag ("GameControl");
 	}
 
 	// Update is called once per frame
 	void Update () {
-	
+		if (onFire) {
+			fuel -= (burnRate * Time.deltaTime);
+
+			//send fire to adjacent tiles
+			foreach (int adjacentTileInt in gameControl.GetComponent<MapStatus>().getAdjacentTiles(TileID)) {
+				GameObject adjacentTile = gameControl.GetComponent<MapStatus> ().DisplayTile (adjacentTileInt);
+
+				if (adjacentTile.GetComponent<TileInfo> ().flammable) {
+					adjacentTile.GetComponent<TileInfo> ().receiveFire (burnRate);
+				}
+			}
+
+			if (fuel <= 0) {//check if fire is out				
+				onFire = false;
+				burnRate = 0;
+				GameObject.Destroy (gameObject);
+			}
+		}
+	}
+
+
+	public void catchFire(float initialBurnRate) {
+		onFire = true;
+		burnRate = initialBurnRate;
+
+		fireParticleObject = GameObject.Instantiate (fireParticlePrefab);
+		fireParticleObject.transform.parent = gameObject.transform;
+		fireParticleObject.transform.localPosition = new Vector3 (0, 0, 0);
+
+	}
+
+	public void receiveFire (float reductionAmount) {
+		if (!onFire) {
+			fireResistance -= reductionAmount;
+			if (fireResistance < 0) {//caught fire
+				catchFire (1);
+			}
+		}
 	}
 }

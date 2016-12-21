@@ -397,7 +397,7 @@ Camera:
   far clip plane: 1000
   field of view: 91
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -418,7 +418,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1086818195}
   m_LocalRotation: {x: 0.40673664, y: 0, z: 0, w: 0.9135455}
-  m_LocalPosition: {x: 25, y: 16.12, z: 17.97}
+  m_LocalPosition: {x: 5, y: 7.6, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 48, y: 0, z: 0}
   m_Children: []
@@ -721,7 +721,6 @@ GameObject:
   - 114: {fileID: 1692179638}
   - 114: {fileID: 1692179639}
   - 114: {fileID: 1692179640}
-  - 114: {fileID: 1692179641}
   - 114: {fileID: 1692179642}
   m_Layer: 0
   m_Name: GameControl
@@ -741,8 +740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dafa644f73ba276489532a1d1dba3141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rowSize: 50
-  numberRows: 50
+  rowSize: 10
+  numberRows: 10
   waterChanceBase: 2
   waterAdjacentBonus: 100
   mtnChanceBase: 1
@@ -775,7 +774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e377f73dfec9214eaf9602ca516983d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tribe: {fileID: 0}
 --- !u!114 &1692179637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,18 +829,6 @@ MonoBehaviour:
   waterTilePrefab: {fileID: 102462, guid: 8d0a1b84a6f0448df8364021151044fd, type: 2}
   mountainTilePrefab: {fileID: 102462, guid: aaf4ae12926e44ea6b7ca7417fd6cf93, type: 2}
   treeTilePrefab: {fileID: 102462, guid: 757929994970d410f989baebb1cb31ab, type: 2}
---- !u!114 &1692179641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1692179633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ecaa017133cb44a4bc0f98b535d5e3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tribeFoodStorageTxt: {fileID: 0}
 --- !u!114 &1692179642
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -204,6 +204,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TileID: 1
-  Walkable: 1
-  foodChance: 20
-  visibilityModifier: 1
+  flammable: 1
+  onFire: 0
+  fuel: 10
+  burnRate: 0
+  fireResistance: 20
+  fireParticleObject: {fileID: 0}
+  fireParticlePrefab: {fileID: 100000, guid: cbf09ee454c6b024f8148644eeeeef6b, type: 2}

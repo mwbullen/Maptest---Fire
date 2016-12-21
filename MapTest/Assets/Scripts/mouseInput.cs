@@ -4,8 +4,6 @@ using System.Collections;
 public class mouseInput : MonoBehaviour {
 	GameObject terrain;
 
-	public GameObject Tribe;
-
 	// Use this for initialization
 	void Start () {
 		terrain = GameObject.FindGameObjectWithTag ("Ground");
@@ -26,8 +24,7 @@ public class mouseInput : MonoBehaviour {
 
 				GameObject selectedTile = r.collider.gameObject;
 
-
-			
+				selectedTile.GetComponent<TileInfo> ().catchFire (1);
 			}
 		}
 	}

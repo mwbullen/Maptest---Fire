@@ -27,14 +27,7 @@ public class GameInit : MonoBehaviour {
 	
 	}
 
-	public void CreateTribe() {
-		GameObject newTribe = GameObject.Instantiate (tribePrefab);
 
-		//assign tribe prefab where needed
-		Camera.main.SendMessage ("SetFollowTarget", newTribe);
-
-		gameObject.GetComponent<mouseInput>().Tribe  = newTribe;
-	}
 
 	public void NewGame() {
 		//delete save files

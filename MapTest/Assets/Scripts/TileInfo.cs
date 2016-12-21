@@ -36,7 +36,7 @@ public class TileInfo : MonoBehaviour {
 				GameObject adjacentTile = gameControl.GetComponent<MapStatus> ().getTileatIndex (adjacentTileInt);
 
 				if (adjacentTile != null && adjacentTile.GetComponent<TileInfo> ().flammable) {
-					adjacentTile.GetComponent<TileInfo> ().receiveFire (burnRate);
+					adjacentTile.GetComponent<TileInfo> ().receiveFire (burnRate*Time.deltaTime);
 				}
 			}
 

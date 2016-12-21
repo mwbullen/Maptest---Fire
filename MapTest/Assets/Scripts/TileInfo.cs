@@ -33,17 +33,21 @@ public class TileInfo : MonoBehaviour {
 
 			//send fire to adjacent tiles
 			foreach (int adjacentTileInt in gameControl.GetComponent<MapStatus>().getAdjacentTiles(TileID)) {
-				GameObject adjacentTile = gameControl.GetComponent<MapStatus> ().DisplayTile (adjacentTileInt);
+				GameObject adjacentTile = gameControl.GetComponent<MapStatus> ().getTileatIndex (adjacentTileInt);
 
-				if (adjacentTile.GetComponent<TileInfo> ().flammable) {
+				if (adjacentTile != null && adjacentTile.GetComponent<TileInfo> ().flammable) {
 					adjacentTile.GetComponent<TileInfo> ().receiveFire (burnRate);
 				}
 			}
 
 			if (fuel <= 0) {//check if fire is out				
+				//change to open tile
+				flammable = false;
 				onFire = false;
 				burnRate = 0;
-				GameObject.Destroy (gameObject);
+
+				gameControl.GetComponent<MapStatus> ().updateTileAtIndex(TileID, '_');
+
 			}
 		}
 	}

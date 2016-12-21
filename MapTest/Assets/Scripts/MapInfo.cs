@@ -31,6 +31,10 @@ public class MapInfo
 		}
 	}
 
+	public void updateTileType(int tileIndex, char newTileChar) {
+		mapSourceString = mapSourceString.Substring (0, tileIndex-1) + newTileChar + mapSourceString.Substring (tileIndex + 1);
+
+	}
 
 }
 

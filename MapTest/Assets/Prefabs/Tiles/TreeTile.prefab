@@ -206,7 +206,7 @@ MonoBehaviour:
   TileID: 1
   flammable: 1
   onFire: 0
-  fuel: 10
+  fuel: 2
   burnRate: 0
   fireResistance: 20
   fireParticleObject: {fileID: 0}

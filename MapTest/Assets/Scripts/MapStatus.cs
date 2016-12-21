@@ -50,17 +50,29 @@ public class MapStatus : MonoBehaviour {
 		}
 	}
 
-	public GameObject DisplayTile(int tileIndex) {
-		//check if tile exists
+	public void updateTileAtIndex (int tileIndex, char newChar) {
+		mapInfo.updateTileType (tileIndex, newChar);
 
+		GameObject gameControl = GameObject.FindGameObjectWithTag ("GameControl");
+		gameControl.GetComponent<SaveLoad> ().SaveMapInfo ();
+
+		GameObject currentTile = getTileatIndex (tileIndex);
+		GameObject.Destroy (currentTile);
+
+		createTileforIndex (tileIndex);
+	}
+
+	public GameObject getTileatIndex(int tileIndex) {
 		foreach (GameObject tileGameObject in GameObject.FindGameObjectsWithTag("Tile")) {
 			if (tileGameObject.GetComponent<TileInfo> ().TileID == tileIndex) {//tile is already displayed				
 				return tileGameObject;
 			} 
 		}
 
-		//if tile does not exist, display
+		return null;
+	}
 
+	public GameObject createTileforIndex(int tileIndex) {
 		char tileChar = mapInfo.getTileStringatPosition (tileIndex);
 
 		GameObject tilePrefab = null;
@@ -94,6 +106,21 @@ public class MapStatus : MonoBehaviour {
 			return newTile;
 		}
 		return null;
+	}
+
+	public GameObject DisplayTile(int tileIndex) {
+		//check if tile exists
+
+		foreach (GameObject tileGameObject in GameObject.FindGameObjectsWithTag("Tile")) {
+			if (tileGameObject.GetComponent<TileInfo> ().TileID == tileIndex) {//tile is already displayed	
+				Debug.Log("tile already displayed");
+				return tileGameObject;
+			} 
+		}
+
+		//if tile does not exist, display
+		return createTileforIndex(tileIndex);
+
 	}
 	// Update is called once per frame
 	void Update () {

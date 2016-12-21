@@ -17,14 +17,15 @@ public class mouseInput : MonoBehaviour {
 			RaycastHit r = new RaycastHit();
 			Ray cameraRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 
-			Physics.Raycast (cameraRay, out r);
+			if (Physics.Raycast (cameraRay, out r)) {
 
-			if (r.collider.gameObject.tag == "Tile") {
-				//Debug.Log (r.point);
+				if (r.collider.gameObject.tag == "Tile") {
+					//Debug.Log (r.point);
 
-				GameObject selectedTile = r.collider.gameObject;
+					GameObject selectedTile = r.collider.gameObject;
 
-				selectedTile.GetComponent<TileInfo> ().catchFire (1);
+					selectedTile.GetComponent<TileInfo> ().catchFire (1);
+				}
 			}
 		}
 	}

@@ -16,11 +16,10 @@ public class GameInit : MonoBehaviour {
 
 	void startGame() {
 		gameObject.GetComponent<MapStatus> ().LoadorCreateMap ();
-		gameObject.GetComponent<MapStatus> ().showPreviousTiles ();
+		//gameObject.GetComponent<MapStatus> ().showPreviousTiles ();
+		gameObject.GetComponent<MapStatus> ().showAllTiles();
 
-		gameObject.GetComponent<GameInit> ().CreateTribe ();
-
-		gameObject.GetComponent<TurnManagement> ().updateUIInfo ();
+		//gameObject.GetComponent<TurnManagement> ().updateUIInfo ();
 	}
 
 	// Update is called once per frame

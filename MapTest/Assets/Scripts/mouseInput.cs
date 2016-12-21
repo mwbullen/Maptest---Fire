@@ -26,9 +26,7 @@ public class mouseInput : MonoBehaviour {
 
 				GameObject selectedTile = r.collider.gameObject;
 
-				if (selectedTile.GetComponent<TileInfo> ().Walkable) {
-					Tribe.SendMessage ("MovetoTile", selectedTile);
-				}
+
 			
 			}
 		}

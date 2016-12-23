@@ -24,14 +24,14 @@ public class KeyInput : MonoBehaviour {
 				GameObject plane = GameObject.FindGameObjectWithTag ("Player");
 				timeSinceKeyPress = 0;
 
-				plane.GetComponent<PlayMakerFSM> ().SendEvent ("Left");
+			//	plane.GetComponent<PlayMakerFSM> ().SendEvent ("Left");
 
 				//tribe.SendMessage ("MoveLeft");
 			} else if (Input.GetKey (KeyCode.RightArrow)) {
 				GameObject plane = GameObject.FindGameObjectWithTag ("Player");
 				timeSinceKeyPress = 0;
 
-				plane.GetComponent<PlayMakerFSM> ().SendEvent ("Right");
+			//	plane.GetComponent<PlayMakerFSM> ().SendEvent ("Right");
 			}
 		}
 	}

@@ -20,26 +20,18 @@ public class KeyInput : MonoBehaviour {
 		}
 
 		if (timeSinceKeyPress >= keyPressInterval) {
-			if (Input.GetKey (KeyCode.UpArrow)) {
-				tribe = GameObject.FindGameObjectWithTag ("Tribe");
+		   if (Input.GetKey (KeyCode.LeftArrow)) {
+				GameObject plane = GameObject.FindGameObjectWithTag ("Player");
 				timeSinceKeyPress = 0;
 
-				tribe.SendMessage ("MoveUp");
-			} else if (Input.GetKey (KeyCode.DownArrow)) {
-				tribe = GameObject.FindGameObjectWithTag ("Tribe");
-				timeSinceKeyPress = 0;
+				plane.GetComponent<PlayMakerFSM> ().SendEvent ("Left");
 
-				tribe.SendMessage ("MoveDown");
-			} else if (Input.GetKey (KeyCode.LeftArrow)) {
-				tribe = GameObject.FindGameObjectWithTag ("Tribe");
-				timeSinceKeyPress = 0;
-
-				tribe.SendMessage ("MoveLeft");
+				//tribe.SendMessage ("MoveLeft");
 			} else if (Input.GetKey (KeyCode.RightArrow)) {
-				tribe = GameObject.FindGameObjectWithTag ("Tribe");
+				GameObject plane = GameObject.FindGameObjectWithTag ("Player");
 				timeSinceKeyPress = 0;
 
-				tribe.SendMessage ("MoveRight");
+				plane.GetComponent<PlayMakerFSM> ().SendEvent ("Right");
 			}
 		}
 	}

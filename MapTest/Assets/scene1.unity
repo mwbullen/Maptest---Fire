@@ -1399,6 +1399,7 @@ GameObject:
   - 114: {fileID: 1692179639}
   - 114: {fileID: 1692179640}
   - 114: {fileID: 1692179642}
+  - 114: {fileID: 1692179641}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: GameControl
@@ -1504,6 +1505,21 @@ MonoBehaviour:
   waterTilePrefab: {fileID: 102462, guid: 8d0a1b84a6f0448df8364021151044fd, type: 2}
   mountainTilePrefab: {fileID: 102462, guid: aaf4ae12926e44ea6b7ca7417fd6cf93, type: 2}
   treeTilePrefab: {fileID: 102462, guid: 757929994970d410f989baebb1cb31ab, type: 2}
+--- !u!114 &1692179641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1692179633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17f7a2de2d201f40a6aef6835a04590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireInterval: 5
+  numberRandomFires: 5
+  timeSinceLastFireInterval: 0
+  numberRandomFiresStarted: 0
 --- !u!114 &1692179642
 MonoBehaviour:
   m_ObjectHideFlags: 0

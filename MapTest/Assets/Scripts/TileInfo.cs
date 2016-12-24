@@ -15,7 +15,10 @@ public class TileInfo : MonoBehaviour {
 
 	public float fuel = 10f;
 	public float burnRate = 0f;
+	public float defaultInitalBurnRate = 1f;
 	public float fireResistance = 5f;
+
+
 
 	public GameObject fireParticleObject;
 	public GameObject fireParticlePrefab;
@@ -67,7 +70,7 @@ public class TileInfo : MonoBehaviour {
 		if (!onFire) {
 			fireResistance -= reductionAmount;
 			if (fireResistance < 0) {//caught fire
-				catchFire (1);
+				catchFire (defaultInitalBurnRate);
 			}
 		}
 	}

@@ -26,7 +26,11 @@ public class planeActions : MonoBehaviour {
 
 		//can't clear tile if burning
 		if (aboveTile != null && aboveTile.GetComponent<TileInfo> ().onFire == false) {
-			gameControl.GetComponent<MapStatus> ().updateTileAtIndex (aboveTileID, '_');
+			char tileType = gameControl.GetComponent<MapStatus> ().mapInfo.mapSourceString.ToCharArray () [aboveTileID];
+
+			if (tileType == 'T') {
+				gameControl.GetComponent<MapStatus> ().updateTileAtIndex (aboveTileID, '_');
+			}
 		}
 
 

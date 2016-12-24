@@ -146,10 +146,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 151829864}
-  m_LocalRotation: {x: 0.40821794, y: -0.23456973, z: 0.109381676, w: 0.87542605}
+  m_LocalRotation: {x: 0.68298715, y: -0.18310806, z: 0.18310806, w: 0.68298715}
   m_LocalPosition: {x: 0.48, y: 2.882, z: -0.832}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -30.016, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -924,6 +924,7 @@ GameObject:
   - 124: {fileID: 1086818197}
   - 81: {fileID: 1086818196}
   - 114: {fileID: 1086818201}
+  - 114: {fileID: 1086818202}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1015,6 +1016,17 @@ MonoBehaviour:
   height: 5
   rotationDamping: 0
   heightDamping: 3
+--- !u!114 &1086818202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1086818195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d6abad0fb52454fb6ba651cd800274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1257275879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,13 +1549,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dafa644f73ba276489532a1d1dba3141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rowSize: 8
-  numberRows: 8
+  rowSize: 20
+  numberRows: 20
   waterChanceBase: 2
   waterAdjacentBonus: 100
   mtnChanceBase: 1
   mtnAdjacentBonus: 75
-  treeChanceBase: 8
+  treeChanceBase: 50
   treeAdjacentBonus: 85
   openChanceBase: 100
   foodPrefab: {fileID: 1000014040890108, guid: ffbce95ca75de40d48bb6682ad963789, type: 2}

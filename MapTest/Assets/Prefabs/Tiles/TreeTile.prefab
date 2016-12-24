@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2363714}
   - 222: {fileID: 22265516}
   - 114: {fileID: 114000013309057206}
+  - 114: {fileID: 114000010154188014}
   m_Layer: 0
   m_Name: TreeTile
   m_TagString: Tile
@@ -31,6 +32,7 @@ GameObject:
   - 193: {fileID: 19324084}
   - 33: {fileID: 3340968}
   - 23: {fileID: 2331076}
+  - 114: {fileID: 114000012206231334}
   m_Layer: 0
   m_Name: Tree 1
   m_TagString: Untagged
@@ -192,6 +194,28 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102462}
   m_IsPrefabParent: 1
+--- !u!114 &114000010154188014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d25227f3b84f140a4d89a2fc7da981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000012206231334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a71ec58c24f884798fb077615b45b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013309057206
 MonoBehaviour:
   m_ObjectHideFlags: 1

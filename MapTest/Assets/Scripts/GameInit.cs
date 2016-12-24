@@ -3,7 +3,6 @@ using System.Collections;
 
 public class GameInit : MonoBehaviour {
 
-	public GameObject tribePrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +18,7 @@ public class GameInit : MonoBehaviour {
 		//gameObject.GetComponent<MapStatus> ().showPreviousTiles ();
 		gameObject.GetComponent<MapStatus> ().showAllTiles();
 
+		Camera.main.GetComponent<cameraLocationSetup> ().setCameraLocation ();
 		//gameObject.GetComponent<TurnManagement> ().updateUIInfo ();
 	}
 

@@ -135,8 +135,17 @@ public class MapStatus : MonoBehaviour {
 
 		//int sightRange = Mathf.RoundToInt( baseSightRange * visibilityModifier);
 
-		inRangeTileList.Add (tileID + 1);
-		inRangeTileList.Add (tileID - 1);
+		int rowPosition = tileID % rowSize;
+
+		//check if end tile
+		if (rowPosition >0 ) {
+			inRangeTileList.Add (tileID - 1);
+		}
+
+		if (rowPosition < rowSize - 1) {
+			inRangeTileList.Add (tileID + 1);
+		}
+
 		inRangeTileList.Add (tileID + rowSize);
 		inRangeTileList.Add (tileID - rowSize);
 

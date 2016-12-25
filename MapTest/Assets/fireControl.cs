@@ -28,16 +28,22 @@ public class fireControl : MonoBehaviour {
 	void startNewFire() {
 		MapStatus currentMapStatus = gameObject.GetComponent<MapStatus> ();
 
-		int randomTileID = UnityEngine.Random.Range (1, currentMapStatus.mapInfo.mapSourceString.Length);
+		bool treeFound = false;
 
-		char randomTileType = currentMapStatus.mapInfo.mapSourceString.ToCharArray() [randomTileID];
+		while (!treeFound) {
+			int randomTileID = UnityEngine.Random.Range (1, currentMapStatus.mapInfo.mapSourceString.Length);
+			char randomTileType = currentMapStatus.mapInfo.mapSourceString.ToCharArray() [randomTileID];
 
-		GameObject randomTile = currentMapStatus.getTileatIndex (randomTileID);
+			//Debug.Log (randomTileType);
+			GameObject randomTile = currentMapStatus.getTileatIndex (randomTileID);
 
-		if (randomTileType == 'T' && randomTile.GetComponent<TileInfo>().onFire == false ) {
-			randomTile.GetComponent<TileInfo> ().catchFire (randomTile.GetComponent<TileInfo> ().defaultInitalBurnRate);
+			if (randomTileType == 'T' && randomTile.GetComponent<TileInfo>().onFire == false ) {
+				treeFound = true;
+				randomTile.GetComponent<TileInfo> ().catchFire (randomTile.GetComponent<TileInfo> ().defaultInitalBurnRate);
 
+			}
 		}
+
 
 
 	}

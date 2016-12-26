@@ -986,7 +986,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a34235a99f8645779704de1e7a6760e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airSpeed: 2
+  baseAirSpeed: 3
+  turboModifier: 2
 --- !u!114 &1501428988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,7 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d006c680f8d54c92be0f095b004402b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseTurnRate: 100
+  baseTurnRate: 250
 --- !u!4 &1501428989
 Transform:
   m_ObjectHideFlags: 0
@@ -1035,7 +1036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc7ec4e48ea54da3bc35083be401936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayCastInterval: 0.5
+  rayCastInterval: 0.1
   aboveTileID: 0
 --- !u!114 &1501428991
 MonoBehaviour:

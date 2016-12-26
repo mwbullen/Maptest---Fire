@@ -3,7 +3,7 @@ using System.Collections;
 
 public class planeTileTracking : MonoBehaviour {
 
-	public float rayCastInterval = .5f;
+	public float rayCastInterval = .1f;
 	float timeSinceLastRaycast = 0;
 
 	public int aboveTileID;

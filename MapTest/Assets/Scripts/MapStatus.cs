@@ -13,6 +13,7 @@ public class MapStatus : MonoBehaviour {
 	public GameObject waterTilePrefab;
 	public GameObject mountainTilePrefab;
 	public GameObject treeTilePrefab;
+	public GameObject oilTankTilePrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -38,11 +39,13 @@ public class MapStatus : MonoBehaviour {
 		} 
 	}
 
+	/*
 	public void showPreviousTiles() {
 		foreach (int i in mapInfo.visibleTiles.Keys) {
 			DisplayTile(i);
 		}
 	}
+*/
 
 	public void showAllTiles() {
 		for (int i = 1; i < mapInfo.mapSourceString.Length; i++) {
@@ -87,6 +90,8 @@ public class MapStatus : MonoBehaviour {
 			tilePrefab = treeTilePrefab;
 		} else if (tileChar == 'm') {
 			tilePrefab = mountainTilePrefab;
+		} else if (tileChar == 'o') {
+			tilePrefab = oilTankTilePrefab;
 		}
 
 		float posx =  tileIndex % mapInfo.rowSize;

@@ -17,6 +17,10 @@ public class MapGeneration : MonoBehaviour {
 
 	public int openChanceBase = 50;
 
+	public int minOilTanks = 2;
+	public int maxOilTanks = 5;
+
+
 	string mapString;
 
 	public GameObject foodPrefab;
@@ -118,8 +122,25 @@ public class MapGeneration : MonoBehaviour {
 
 		}
 
+		addRandomObjects ('o', minOilTanks, maxOilTanks);
+
 		return mapString;
 	}
 
+	public void addRandomObjects(char ObjectChar, int minCount, int maxCount) {
+		int targetCount = Random.Range (minCount, maxCount);
 
+		for (int i = 0; i < targetCount; i++) {
+			//get random tile
+
+			int randomTilePosition = Random.Range (1, mapString.Length);
+
+			char[] mapChars = mapString.ToCharArray ();
+
+			mapChars [randomTilePosition] = ObjectChar;
+
+			mapString = new string (mapChars);
+
+		}
+	}
 }

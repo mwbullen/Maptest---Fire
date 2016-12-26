@@ -1430,6 +1430,8 @@ MonoBehaviour:
   treeChanceBase: 50
   treeAdjacentBonus: 85
   openChanceBase: 100
+  minOilTanks: 2
+  maxOilTanks: 5
   foodPrefab: {fileID: 1000014040890108, guid: ffbce95ca75de40d48bb6682ad963789, type: 2}
 --- !u!4 &1692179635
 Transform:
@@ -1508,6 +1510,7 @@ MonoBehaviour:
   waterTilePrefab: {fileID: 102462, guid: 8d0a1b84a6f0448df8364021151044fd, type: 2}
   mountainTilePrefab: {fileID: 102462, guid: aaf4ae12926e44ea6b7ca7417fd6cf93, type: 2}
   treeTilePrefab: {fileID: 102462, guid: 757929994970d410f989baebb1cb31ab, type: 2}
+  oilTankTilePrefab: {fileID: 102462, guid: 6290bdba1d3769e4c9b0e5483e8a75ee, type: 2}
 --- !u!114 &1692179641
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -988,6 +988,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseAirSpeed: 3
   turboModifier: 2
+  turboFuelCapacity: 1
+  currentTurboFuel: 0
 --- !u!114 &1501428988
 MonoBehaviour:
   m_ObjectHideFlags: 0

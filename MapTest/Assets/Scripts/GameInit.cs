@@ -25,6 +25,8 @@ public class GameInit : MonoBehaviour {
 		//gameObject.GetComponent<TurnManagement> ().updateUIInfo ();
 
 		gameObject.GetComponent<Scoring> ().initializeCounts ();
+
+		Time.timeScale = 1;
 	}
 
 	// Update is called once per frame

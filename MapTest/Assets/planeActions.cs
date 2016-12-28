@@ -3,6 +3,9 @@ using System.Collections;
 
 public class planeActions : MonoBehaviour {
 	GameObject gameControl;
+
+	public bool alwaysClearTiles;
+
 	// Use this for initialization
 	void Start () {
 		gameControl = GameObject.FindGameObjectWithTag ("GameControl");
@@ -11,12 +14,15 @@ public class planeActions : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (alwaysClearTiles) {
+			clearTileBelow();
+		}
+
+
 		if (Input.GetKey(KeyCode.Space)) {
 			clearTileBelow ();
-
-
-
 		}
+
 	}
 
 	void clearTileBelow() {

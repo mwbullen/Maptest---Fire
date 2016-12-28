@@ -10,7 +10,8 @@ public class fireControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		numberRandomFires = Random.Range (2, 5);
+
 	}
 	
 	// Update is called once per frame
@@ -22,7 +23,8 @@ public class fireControl : MonoBehaviour {
 			timeSinceLastFireInterval = 0;
 			numberRandomFiresStarted += 1;
 		}
-				
+
+						
 	}
 
 	void startNewFire() {

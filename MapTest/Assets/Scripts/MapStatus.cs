@@ -47,6 +47,30 @@ public class MapStatus : MonoBehaviour {
 	}
 */
 
+	public int get_numberofTrees() {
+		int result = 0;
+
+		foreach (char c in mapInfo.mapSourceString.ToCharArray()) {
+			if (c == 'T') {
+				result += 1;
+			}
+		}
+
+		return result;
+	}
+
+	public int get_NumberOfActiveFires () {
+		int result = 0;
+
+		foreach (TileInfo t in mapParentObject.GetComponentsInChildren<TileInfo>()) {
+			if (t.onFire) {
+				result += 1;
+			}
+		}
+
+		return result;
+	}
+
 	public void showAllTiles() {
 		for (int i = 1; i < mapInfo.mapSourceString.Length; i++) {
 			DisplayTile(i);

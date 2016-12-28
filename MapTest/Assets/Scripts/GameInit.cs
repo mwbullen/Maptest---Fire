@@ -60,7 +60,7 @@ public class GameInit : MonoBehaviour {
 		//Debug.Log (scoringComponent.currentNumTrees);
 		//Debug.Log (scoringComponent.startingNumTrees);
 
-		float finalScorePercent = (scoringComponent.currentNumTrees / scoringComponent.startingNumTrees) * 100;
+		float finalScorePercent = Mathf.Round(((float)scoringComponent.currentNumTrees / (float)scoringComponent.startingNumTrees) * 100);
 
 		Debug.Log (finalScorePercent);
 
